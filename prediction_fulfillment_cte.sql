@@ -23,7 +23,7 @@ SELECT
  group by date
 )
 SELECT date,
-sum(predict) over(order by date) as comulative_predict,
-sum(revenue) over(order by date) as comulative_revenue,
+sum(predict) over(order by date) as cumulative_predict,
+sum(revenue) over(order by date) as cumulative_revenue,
 sum(revenue) over(order by date) / sum(predict) over(order by date) *100 as full_pct
 from by_date
